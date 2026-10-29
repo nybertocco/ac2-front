@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid black;
+    justify-content: center;
+    width: 20%;
+}
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.submit {
+    width: 25%;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: rgba(14, 14, 173, 0.763);
+    color: white;
+}
+* {
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,53 @@
+<div>
+<h2>Lista de Inscrições</h2>
+
+<p>Total de inscrições: {{ total }}</p>
+<p>Confirmadas: {{ confirmadas }}</p>
+<p>Pendentes: {{ pendentes }}</p>
+
+@if (inscricoes.length === 0) {
+  <p>Nenhuma inscrição cadastrada.</p>
+} @else {
+  @for (inscricao of inscricoes; track inscricao.id) {
+    <div class="inscricao">
+      <h3>{{ inscricao.nome }}</h3>
+
+      <p>E-mail: {{ inscricao.email }}</p>
+      <p>Oficina: {{ inscricao.oficina }}</p>
+
+      <p>
+        Status:
+            <span
+              [class.pendente]="inscricao.status === 'Pendente'"
+              [class.confirmada]="inscricao.status === 'Confirmada'"
+            >
+              {{ inscricao.status }}
+        </span>
+      </p>
+
+      <button
+        type="button"
+        class="btn-confirmar"
+        (click)="confirmar(inscricao.id)"
+        [disabled]="inscricao.status === 'Confirmada'"
+      >
+        Confirmar inscrição
+      </button>
+
+      <button
+        type="button"
+        class="btn-remover"
+        (click)="remover(inscricao.id)"
+      >
+        Remover
+      </button>
+
+      <hr />
+    </div>
+  }
+}
+
+<p>
+  <a routerLink="/cadastrar-inscricao">Voltar ao cadastro</a>
+</p>
+</div>

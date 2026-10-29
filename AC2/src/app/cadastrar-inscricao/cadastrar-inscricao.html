@@ -1,0 +1,49 @@
+<div class=" container">
+<h2>Cadastrar Inscrição</h2>
+
+<form (ngSubmit)="cadastrar()" class="form">
+  <div>
+    <label>Nome:</label>
+    <input
+      id="nome"
+      type="text"
+      name="nome"
+      [(ngModel)]="nome"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="email">E-mail:</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="oficina">Oficina:</label>
+    <select
+      id="oficina"
+      name="oficina"
+      [(ngModel)]="oficina"
+      required
+    >
+      <option value="" disabled>Selecione uma oficina</option>
+
+      @for (item of oficinas; track item) {
+        <option [value]="item">{{ item }}</option>
+      }
+    </select>
+  </div>
+
+  <button class="submit" type="submit">Cadastrar</button>
+</form>
+
+<p>
+  <a routerLink="/lista-inscricoes">Ver inscrições</a>
+</p>
+</div>

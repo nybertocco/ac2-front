@@ -1,0 +1,29 @@
+div {
+    color:black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    paddig:10px;
+  
+}
+.inscrição {
+    padding:10px;
+
+}
+p {
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.pendente {
+  color: orange;
+  font-weight: bold;
+}
+
+.confirmada {
+  color: green;
+  font-weight: bold;
+}
